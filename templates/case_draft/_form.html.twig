@@ -1,0 +1,55 @@
+{{ form_start(form) }}
+{{ form_row(form._token) }}
+<div class="row">
+{{ form_errors(form) }}
+</div>
+
+<div class="row form-group">
+
+	<div class="col-md-4">
+ 	<b><h4>{{ form_label(form.case_type, 'Select Case Type', {'label_attr': {'class': 'foo'}}) }}<i class="text-danger"> * </i> </h4> </b> 
+	</div>
+	<div class="col-md-8">
+ 	{{ form_widget(form.case_type, {'attr': {'class': 'form-control'}}) }}
+	</div>
+</div>
+ 
+<div class="row form-group">
+	<div class="col-md-4">
+ 	<b><h4>{{ form_label(form.pet_name, 'Enter Pet. Name', {'label_attr': {'class': 'foo'}}) }}<i class="text-danger"> * </i> </h4> </b> 
+	</div>
+	<div class="col-md-8">
+ 	{{ form_widget(form.pet_name, {'attr': {'class': 'form-control'}}) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<div class="col-md-4">
+ 	<b><h4>{{ form_label(form.res_name, 'Enter Res. Name', {'label_attr': {'class': 'foo'}}) }}<i class="text-danger"> * </i> </h4> </b> 
+	</div>
+	<div class="col-md-8">
+ 	{{ form_widget(form.res_name, {'attr': {'class': 'form-control'}}) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<div class="col-md-4">
+ 	<b><h4> Upload pdf case file <i class="text-danger"> * </i> </h4> </b> 
+	</div>
+	<div class="col-md-8">
+ 	{{ form_widget(form.case_file) }}
+	</div>
+</div>
+
+
+
+
+
+<div class="row float-right">
+ 
+<button class="btn btn-primary btn-lg">{{ button_label|default('Submit ') }}</button>
+</div>
+
+<div class="clearfix" style="margin-top:50px;"></div>
+
+{{ form_end(form, {'render_rest': false}) }}

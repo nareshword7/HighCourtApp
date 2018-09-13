@@ -1,0 +1,13 @@
+{% extends '/admin_cus/layout.html.twig' %}
+
+
+{% block main_body  %}
+    <h1>Register new Case</h1>
+
+    <div class="clearfix"></div>
+    <hr/>
+
+    {{ include('case_draft/_form.html.twig') }}
+
+    <a href="{{ path('case_draft_index') }}" class="btn btn-primary">back to list</a>
+{% endblock %}

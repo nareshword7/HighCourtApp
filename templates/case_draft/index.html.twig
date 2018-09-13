@@ -1,0 +1,54 @@
+{% extends '/admin_cus/layout.html.twig' %}
+
+{% block title %}CaseDraft index{% endblock %}
+
+{% block main_body %}
+<h1>Case  Draft </h1>
+<hr/>
+
+<div class="row">
+<div class="col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pet_name</th>
+                <th>Res_name</th>
+                <th>Case_type</th>
+                <th>Case_type_name</th>
+                <th>Filing_date</th>
+                <th>Draft_id</th>
+                <th>Draft_status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for case_draft in case_drafts %}
+            <tr>
+                <td>{{ case_draft.id }}</td>
+                <td>{{ case_draft.petName }}</td>
+                <td>{{ case_draft.resName }}</td>
+                <td>{{ case_draft.caseType }}</td>
+                <td>{{ case_draft.caseTypeName }}</td>
+                <td>{{ case_draft.filingDate }}</td>
+                <td>{{ case_draft.draftId }}</td>
+                <td>{{ case_draft.draftStatus }}</td>
+                <td>
+                    <a href="{{ path('case_draft_show', {'id': case_draft.id}) }}">show</a>
+                    <a href="{{ path('case_draft_edit', {'id': case_draft.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('case_draft_new') }}" class="btn btn-danger">Create new</a>
+    </div>
+    </div>
+{% endblock %}
+

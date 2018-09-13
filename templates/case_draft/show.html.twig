@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CaseDraft{% endblock %}
+
+{% block body %}
+    <h1>CaseDraft</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ case_draft.id }}</td>
+            </tr>
+            <tr>
+                <th>Pet_name</th>
+                <td>{{ case_draft.petName }}</td>
+            </tr>
+            <tr>
+                <th>Res_name</th>
+                <td>{{ case_draft.resName }}</td>
+            </tr>
+            <tr>
+                <th>Case_type</th>
+                <td>{{ case_draft.caseType }}</td>
+            </tr>
+            <tr>
+                <th>Case_type_name</th>
+                <td>{{ case_draft.caseTypeName }}</td>
+            </tr>
+            <tr>
+                <th>Filing_date</th>
+                <td>{{ case_draft.filingDate }}</td>
+            </tr>
+            <tr>
+                <th>Draft_id</th>
+                <td>{{ case_draft.draftId }}</td>
+            </tr>
+            <tr>
+                <th>Draft_status</th>
+                <td>{{ case_draft.draftStatus }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('case_draft_index') }}">back to list</a>
+
+    <a href="{{ path('case_draft_edit', {'id': case_draft.id}) }}">edit</a>
+
+    {{ include('case_draft/_delete_form.html.twig') }}
+{% endblock %}

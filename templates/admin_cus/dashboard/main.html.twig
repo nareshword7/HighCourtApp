@@ -1,0 +1,33 @@
+{% extends '/admin_cus/layout.html.twig' %}
+
+{% block main_body %}
+  
+<div class="card-deck row">
+  <div class="card bg-primary col-md-2">
+    <div class="card-body text-center" style="color:#fff;">
+      <i class="fa fa-upload fa-5x" aria-hidden="true"></i>
+      <br/>
+      <hr/>
+      <h4> 
+      <a href="admincus/runscript" class="ajaxrequest" targetID="#targetDiv">  Push CIS data to Website </a>
+        <br/>
+        <div id="targetDiv" ></div>
+      </h4>   
+    </div>
+  </div>
+
+  <div class="card bg-info col-md-2">
+    <div class="card-body text-center" style="color:#fff;">
+      <i class="fa fa-clipboard fa-5x" aria-hidden="true"></i>
+      <br/>
+      <hr/>
+      <h4> 
+      <a href="admincus/certifiedscript" class="ajaxrequest" targetID="#targetCertifiedDiv">  Push Certified Copy Data </a>
+        <br/>
+        <div id="targetCertifiedDiv" ></div>
+      </h4>   
+    </div>
+  </div>
+</div>
+
+{% endblock %}

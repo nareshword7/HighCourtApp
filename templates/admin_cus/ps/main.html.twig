@@ -1,0 +1,64 @@
+{% extends '/admin_cus/ps_layout.html.twig' %}
+
+{% block main_body %}
+ 
+<div class="card card-primary">
+    <div class="card-header bg-primary"> 
+
+     <div class="row">  
+
+        <form action="/getCases" method="post">
+     	  Select Bench 
+     	  <select id="casetype" class="form-control">  <option value="0"> Select  </option>  
+     	{% for judge in result %}
+         	<option value="{{ judge.court_no }}"> {{ judge.judgename|e }}  </option> 
+    	{% endfor %}
+     	
+     	 </select> 
+     	
+     	 <input type="text" class="form-control" id="datepicker" placeholder="Select date" />  
+ <input type="submit" value="Submit" class="btn btn-danger">  
+     	</form>
+     </div>    
+
+     </div>
+    <div class="card-body">
+    <div class="row">
+     	<div class="col-md-3"> This is a  test </div>
+     	<div class="col-md-9"> I am here is testing </div>
+    </div>
+
+
+    </div> 
+
+    <div class="card-footer text-right"> <input type="submit" value="Save" class="btn btn-danger"> </div>
+  </div>
+
+<div class="alert alert-primary" role="alert" style="display:none;">
+  This is a primary alert—check it out!
+</div> 
+<div class="panel panel-primary" style="display:none;">
+  <div class="panel-heading">
+     This  is a test
+  </div>
+  <div class="panel-body">
+     This is a test
+  </div>
+</div>
+
+
+
+<div class="card-deck row" style="display:none;">
+  <div class="card bg-primary col-md-2">
+      This is a test one {% for user in result %}
+        <li>{{ user.judgename|e }}</li>
+    {% endfor %}
+  </div>
+
+  <div class="card bg-info col-md-2">
+    This is test two
+  </div>
+    
+</div>
+
+{% endblock %}
